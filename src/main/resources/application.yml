@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/h2DB;MODE=PostgreSQL
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    spring.jpa.hibernate.ddl-auto: create-drop
+    properties.javax.persistence.schema-generation.scripts.action: create
+    properties.javax.persistence.schema-generation.scripts.create-target: data/create.sql
+    properties.javax.persistence.schema-generation.scripts.create-source: metadata
+rsa:
+  private-key: classpath:certs/private.pem
+  public-key: classpath:certs/public.pem
+
